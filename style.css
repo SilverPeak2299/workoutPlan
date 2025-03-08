@@ -45,7 +45,7 @@ ul {
     list-style-type: none;
 }
 
-ul li {
+.exersise {
     background-color: #333333;
     padding: 10px;
     border-radius: 4px;
@@ -53,27 +53,19 @@ ul li {
     color: #E0E0E0;
 }
 
-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: #BB86FC;
-    color: #121212;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 15px;
-    font-size: 16px;
+.exersise:hover {
+    background-color: #646464;
 }
 
-button:hover {
-    background-color: #9B63CC;
-}
 
 .day {
     display: none; /* Initially hidden, JavaScript reveals the correct day */
 }
+
+.day li {
+    cursor: pointer;
+ }
+  
 
 /* Button Styling */
 button {

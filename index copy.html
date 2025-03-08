@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Workout Plan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Your Weekly Workout Plan</h1>
+    
+    <!-- Tuesday: Plyometrics & Explosiveness -->
+    <div class="day" data-day="Tuesday">
+      <h2>Tuesday: Plyometrics & Explosiveness (Agility + Power)</h2>
+
+      <h3>Plyometric Block</h3>
+      <ul>
+        <li><button>Depth Jumps – 3-4 sets of 3-5 reps</button></li>
+        <li><button>Bounding – 3 sets of 20 meters</button></li>
+        <li><button>Lateral Skater Jumps – 3 sets of 8-10 reps per side</button></li>
+        <li><button>Ankle Hops – 3 sets of 30 seconds</button></li>
+      </ul>
+      <h3>Agility & Acceleration</h3>
+      <ul>
+        <li><button>Ladder Drills – 3 rounds of 30 seconds each</button></li>
+        <li><button>Cone Sprints (5m, 10m, 5m bursts) – 3 sets</button></li>
+        <li><button>Reactive Drop Jumps – 3 sets of 5 reps</button></li>
+      </ul>
+      <h3>Stability & Injury Prevention</h3>
+      <ul>
+        <li><button>Hamstring Isometric Bridge Holds – 3 sets of 30 seconds</button></li>
+        <li><button>Banded Ankle Eversions/Inversions – 2 sets of 15 reps per side</button></li>
+      </ul>
+      <h3>Cool-down (10 min)</h3>
+      <ul>
+        <li><button>Static Stretches</button></li>
+        <li><button>Ankle and Hamstring Mobility Work</button></li>
+      </ul>
+    </div>
+
+    <!-- Thursday: Upper Body & Core Strength (Super Set Focus) -->
+    <div class="day" data-day="Thursday">
+      <h2>Thursday: Upper Body & Core Strength (Super Set Focus)</h2>
+
+      <h3>Main Strength Block</h3>
+      <h4>Super Set 1</h4>
+      <ul>
+        <li><button>Push-Ups – 4 sets of 10-15 reps</button></li>
+        <li><button>Pull-Ups – 4 sets of 5-6 reps</button></li>
+      </ul>
+      <h4>Super Set 2</h4>
+      <ul>
+        <li><button>Russian Twists (weighted if desired) – 3 sets of 20 reps (10 per side)</button></li>
+        <li><button>YTW Raises (light dumbbells or bands) – 3 sets of 10 reps each</button></li>
+      </ul>
+      <h3>Accessory & Forearm Work</h3>
+      <ul>
+        <li><button>Wrist Curls – 3 sets of 12-15 reps</button></li>
+        <li><button>Reverse Wrist Curls – 3 sets of 12-15 reps</button></li>
+        <li><button>Plate Pinch Holds – 3 sets of 30-45 seconds</button></li>
+        <li><button>Hanging Bar Holds – 3 sets of 30-45 seconds</button></li>
+      </ul>
+      <h3>Cool-down (10 min)</h3>
+      <ul>
+        <li><button>Stretching</button></li>
+        <li><button>Shoulder and Wrist Mobility Work</button></li>
+      </ul>
+    </div>
+
+    <!-- Saturday: Leg Day – Leg & Lower Body Strength (Fencing Specific) -->
+    <div class="day" data-day="Saturday">
+      <h2>Saturday: Leg Day – Leg & Lower Body Strength (Fencing Specific)</h2>
+      <h3>Workout</h3>
+      <ul>
+        <li><button>Back Squats – 3-4 sets of 5-6 reps</button></li>
+        <li><button>Hip Thrusts – 3-4 sets of 8-10 reps</button></li>
+        <li><button>Romanian Deadlifts (light for hamstring control) – 3 sets of 10 reps</button></li>
+        <li><button>Calf Raises – 3-4 sets of 15 reps (use both straight & bent-knee variations)</button></li>
+        <li><button>Hamstring Curls – 2-3 sets of 8-10 reps</button></li>
+      </ul>
+      <h3>Cool-down (10 min)</h3>
+      <ul>
+        <li><button>Static Stretches</button></li>
+        <li><button>Foam Rolling</button></li>
+        <li><button>Ankle and Hamstring Mobility Work</button></li>
+      </ul>
+    </div>
+
+    <!-- Buttons to toggle display for all days -->
+    <button id="showAllButton" onclick="showAllDays()">Show All Days</button>
+    <button id="standardViewButton" onclick="showStandardView()" style="display: none;">Return to Standard View</button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
