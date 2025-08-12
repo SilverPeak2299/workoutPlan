@@ -3,33 +3,36 @@ const today = new Date().getDay();
 
 // Exercise descriptions mapping
 const exerciseDescriptions = {
-  "Depth Jumps": "A depth jump involves stepping off a small box or platform, landing with both feet, and immediately jumping vertically as explosively as possible. Focus on soft landings and controlled movements to minimize impact.",
-  "Bounding": "Bounding is a form of exaggerated running where you focus on long strides and explosive push-off for distance, improving power and coordination.",
-  "Lateral Skater Jumps": "Lateral skater jumps mimic the side-to-side movement in skating, focusing on balance, lateral power, and landing softly on one foot.",
-  "Ankle Hops": "Quick, low-intensity hops that focus on ankle stiffness and strength. Keep movements controlled.",
-  "Ladder Drills": "Agility ladder drills enhance foot speed and coordination. Move your feet in various patterns through the ladder.",
-  "Cone Sprints": "Short sprints between cones that focus on quick acceleration and deceleration.",
-  "Reactive Drop Jumps": "Drop from a low platform and immediately jump upon landing, focusing on minimizing ground contact time.",
-  "Single-Leg Hop & Hold": "Perform a single-leg hop focusing on a soft landing and hold the position briefly to enhance stability.",
-  "Hamstring Isometric Bridge Holds": "Hold a bridge position with emphasis on contracting your hamstrings and glutes.",
-  "Banded Ankle Eversions/Inversions": "Using a resistance band, perform controlled ankle eversion and inversion movements to strengthen the stabilizing muscles of the ankle.",
-  "Push-Ups": "A classic bodyweight exercise that strengthens the chest, shoulders, and triceps. Maintain a straight line from head to toe.",
-  "Pull-Ups": "An exercise targeting the back and biceps. Pull your chin above the bar with control.",
-  "Russian Twists": "Sit on the floor with knees bent and twist your torso from side to side, optionally holding a weight, to work your obliques.",
-  "YTW Raises": "Perform Y, T, and W motions with light dumbbells or bands to strengthen the upper back and improve shoulder stability.",
-  "Wrist Curls": "Use a barbell or dumbbell to perform wrist curls, focusing on the flexor muscles of the forearm.",
-  "Reverse Wrist Curls": "Target the extensor muscles of the forearm with reverse wrist curls.",
-  "Plate Pinch Holds": "Hold weight plates between your fingers to build pinch grip strength.",
-  "Finger Extensions": "Use a rubber band around your fingers to work the extensor muscles.",
-  "Hanging Bar Holds": "Hang from a bar with a firm grip for time to enhance grip endurance.",
-  "Back Squats": "A fundamental lower-body exercise focusing on the quads, hamstrings, and glutes. Keep your core engaged and back straight.",
-  "Hip Thrusts": "Focus on glute activation by thrusting your hips upward from a bench or floor while keeping your feet flat.",
-  "Romanian Deadlifts": "A hamstring-focused movement performed with controlled motion. Maintain a slight bend in the knees and hinge at the hips.",
-  "Calf Raises": "Perform standing or seated calf raises to strengthen the calf muscles. Full range of motion is key.",
-  "Banded Lateral Walks": "With a resistance band around your legs, take controlled lateral steps to engage your hip abductors and improve ankle stability.",
-  "Single-Leg Balance & Reach": "Improve balance by standing on one leg and reaching forward, challenging your stability and control.",
-  "Nordic Curls": "Focus on hamstring strength with a controlled eccentric movement. Nordic curls are advanced; hamstring curls are a great alternative.",
-  "Hamstring Curls": "Focus on hamstring strength with a controlled eccentric movement. Nordic curls are advanced; hamstring curls are a great alternative."
+  "Jog": "Light jogging to warm up the body and increase heart rate gradually.",
+  "High Knee Skip": "Skip while driving knees up high, focusing on rhythm and coordination.",
+  "Triple A": "Quick, alternating leg movements focusing on agility and footwork.",
+  "Broad Jump": "Jump as far forward as possible from a standing position, landing softly.",
+  "45 Degree Hop and Stick": "Hop at a 45-degree angle and stick the landing for 1 second. Start on alternate legs with silent landings.",  "Hill Run": "Short sprints up a 6m hill. Walk down slowly between reps to recover breathing. Focus on fast feet with step length similar to fencing steps.",
+  "Ankle Circles": "Circular movements of the ankles to improve mobility and flexibility.",
+  "Calf Stretches": "Static stretches for calf muscles to improve flexibility and reduce tension.",
+  "Superman": "Lie prone and lift chest and legs off ground, holding for 10 seconds to stretch hamstrings.",
+  "Twinkle Toes": "Quick, light steps on the balls of your feet to activate calf muscles and improve foot speed.",
+  "Body Squat": "Bodyweight squats focusing on proper form and mobility.",
+  "Athletic Lunge with Torso Turn": "Lunge forward while rotating torso, improving mobility and coordination.",  "Step Forward, Then Backward": "Technical practice of fencing step movements, slow and perfect form.",
+  "Push Back from Split Lunge": "From split lunge position, explosively push back. 3 sets on each leg, alternating.",  "Lateral Hop": "Hop sideways as high and far as possible, no stick landing required.",
+  "Single Leg Squat": "Squat on one leg, no deeper than thigh horizontal. Progress by holding dumbbells.",
+  "Barbell Squat": "Traditional barbell back squat focusing on proper form and depth control.",
+  "Cossack Squat": "Side lunge squat movement, holding weight if possible.","RDL with Dumbbell": "Romanian deadlift using dumbbells, focusing on hamstring engagement.",
+  "Glute Bridge": "Bridge exercise focusing on glute activation.",
+  "Cable Hamstring Kickback": "Cable machine exercise targeting hamstrings and glutes with controlled kicking motion.",
+  "Push Up": "Standard push-ups. Progress if easy.",
+  "Pull Up": "Pull-ups using assistance band as needed.",
+  "Side Plank": "Hold side plank position. Use opposite hand for increased difficulty.",
+  "Horse": "Isometric hold position for tendon strength.",  "Bent Leg Isometric": "Hold bent leg position isometrically.",
+  "Ankle Dorsiflexion Stretches": "Stretches targeting the front of the ankle to improve dorsiflexion range of motion.",
+  "Calf Stretches with Ankle Mobility": "Combined calf stretching and ankle mobility exercises for improved flexibility.",
+  "Finger Isometrics": "Isometric holds using fingers for grip strength.",
+  "Wrist Dumbbell Raise": "Wrist curls using dumbbells in all 4 directions.",
+  "Inverted Wrist Dumbbell Raise": "Reverse wrist curls targeting extensors.",
+  "Wind Weight Up & Down": "Wind weight up and down in both directions.",
+  "Wrist Radial Deviation": "Wrist movement toward thumb side.",
+  "Wrist Ulnar Deviation": "Wrist movement toward pinky side.",
+  "Hold End of Dumbbell": "Grip end of dumbbell horizontally, 3-finger hold if possible."
 };
 
 // Function to display only today's workout initially
@@ -66,11 +69,25 @@ function showStandardView() {
   document.getElementById("standardViewButton").style.display = "none";
 }
 
+// Toggle auxiliary exercises section
+function toggleAuxiliary() {
+  const content = document.getElementById('auxiliary-content');
+  const icon = document.querySelector('.toggle-icon');
+  
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    icon.textContent = '▼';
+  } else {
+    content.style.display = 'none';
+    icon.textContent = '▶';
+  }
+}
+
 // Initialize by showing today’s workout only
 showToday();
 
 // Add click event listeners to all exercise buttons
-document.querySelectorAll('.day button').forEach(button => {
+document.querySelectorAll('button.exercise').forEach(button => {
   button.addEventListener('click', function() {
     console.log("Exercise clicked:", button.textContent);
     const text = button.textContent;
@@ -86,4 +103,14 @@ document.querySelectorAll('.day button').forEach(button => {
       alert("No description available for this exercise.");
     }
   });
+});
+
+// Initialize auxiliary section as collapsed
+document.addEventListener('DOMContentLoaded', function() {
+  const auxiliaryContent = document.getElementById('auxiliary-content');
+  const toggleIcon = document.querySelector('.toggle-icon');
+  if (auxiliaryContent && toggleIcon) {
+    auxiliaryContent.style.display = 'none';
+    toggleIcon.textContent = '▶';
+  }
 });

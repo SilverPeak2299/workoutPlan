@@ -35,9 +35,38 @@ h2 {
     margin-top: 15px;
 }
 
+/* Day-specific header styling */
+.day h2 {
+    color: #FFFFFF;
+    font-size: 24px;
+    text-align: center;
+    background: linear-gradient(135deg, #BB86FC, #9B63CC);
+    padding: 15px;
+    border-radius: 8px;
+    margin: -20px -20px 20px -20px;
+    border: none;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 h3 {
     color: #BB86FC;
     margin-top: 10px;
+}
+
+/* Section headers within days */
+.day h3 {
+    background-color: #333;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 20px 0 10px 0;
+    font-size: 18px;
+    border-left: 4px solid #BB86FC;
+}
+
+h4 {
+    color: #9B63CC;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 ul {
@@ -45,7 +74,7 @@ ul {
     list-style-type: none;
 }
 
-.exersise {
+.exercise {
     background-color: #333333;
     padding: 10px;
     border-radius: 4px;
@@ -53,19 +82,46 @@ ul {
     color: #E0E0E0;
 }
 
-.exersise:hover {
+.exercise:hover {
     background-color: #646464;
 }
 
 
 .day {
     display: none; /* Initially hidden, JavaScript reveals the correct day */
+    background-color: #252525;
+    border: 2px solid #444;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.day::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #BB86FC, #9B63CC, #BB86FC);
+    border-radius: 12px 12px 0 0;
 }
 
 .day li {
     cursor: pointer;
- }
-  
+}
+
+.day p {
+    font-style: italic;
+    color: #B0B0B0;
+    margin: 10px 0;
+}
+
+.day em {
+    color: #FF6B6B;
+}
 
 /* Button Styling */
 button {
@@ -84,4 +140,84 @@ button {
 
 button:hover {
     background-color: #9B63CC;
+}
+
+/* Collapsible Header Styling */
+.collapsible-header {
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.collapsible-header:hover {
+    background-color: #2A2A2A;
+}
+
+.toggle-icon {
+    margin-right: 10px;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.collapsible-content {
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* Auxiliary Section Styling */
+.auxiliary-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #333;
+}
+
+/* Day-specific color variations */
+.day[data-day="Monday"] {
+    border-color: #4A6B5C;
+}
+
+.day[data-day="Monday"]::before {
+    background: linear-gradient(90deg, #4A6B5C, #5A7B6C, #4A6B5C);
+}
+
+.day[data-day="Monday"] h2 {
+    background: linear-gradient(135deg, #4A6B5C, #5A7B6C);
+}
+
+.day[data-day="Tuesday"] {
+    border-color: #5B6B7A;
+}
+
+.day[data-day="Tuesday"]::before {
+    background: linear-gradient(90deg, #5B6B7A, #6B7B8A, #5B6B7A);
+}
+
+.day[data-day="Tuesday"] h2 {
+    background: linear-gradient(135deg, #5B6B7A, #6B7B8A);
+}
+
+.day[data-day="Thursday"] {
+    border-color: #6B4A5C;
+}
+
+.day[data-day="Thursday"]::before {
+    background: linear-gradient(90deg, #6B4A5C, #7B5A6C, #6B4A5C);
+}
+
+.day[data-day="Thursday"] h2 {
+    background: linear-gradient(135deg, #6B4A5C, #7B5A6C);
+}
+
+.day[data-day="Sunday"] {
+    border-color: #5A4A7A;
+}
+
+.day[data-day="Sunday"]::before {
+    background: linear-gradient(90deg, #5A4A7A, #6A5A8A, #5A4A7A);
+}
+
+.day[data-day="Sunday"] h2 {
+    background: linear-gradient(135deg, #5A4A7A, #6A5A8A);
 }
